@@ -1,6 +1,6 @@
-#### Nhiệm vụ của Factory Pattern là quản lý và trả về các đối tượng theo yêu cầu, giúp cho việc khởi tạo đổi tượng một cách linh hoạt hơn.
+### Factory Pattern là gì: Nhiệm vụ của Factory Pattern là quản lý và trả về các đối tượng theo yêu cầu, giúp cho việc khởi tạo đổi tượng một cách linh hoạt hơn.
 
-Giả sử bạn muốn mua một chiếc xe ô tô, bạn sẽ phải đến các cửa hàng để xem xét các xe trước khi mua. Các cửa hàng sẽ đưa xe ra cho bạn xem.
+<i> Giả sử bạn muốn mua một chiếc xe ô tô, bạn sẽ phải đến các cửa hàng để xem xét các xe trước khi mua. Các cửa hàng sẽ đưa xe ra cho bạn xem. </i>
 
 ```
 public interface Car {

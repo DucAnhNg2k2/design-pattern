@@ -30,3 +30,4 @@ const main = () => {
     console.log(Singleton.getValue()); // 1
 }
 main()
+
