@@ -9,5 +9,8 @@
     "factory": "ts-node creational-pattern/factory/factory.ts"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ts-node": "^10.9.2"
+  }
 }
