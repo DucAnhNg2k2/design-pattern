@@ -1,17 +1,16 @@
-### Factory Pattern là gì: Nhiệm vụ của Factory Pattern là quản lý và trả về các đối tượng theo yêu cầu, giúp cho việc khởi tạo đổi tượng một cách linh hoạt hơn.
+#### Factory Pattern là gì: Factory Pattern là một design pattern giúp quản lý và trả về các đối tượng theo yêu cầu, giúp cho việc khởi tạo đổi tượng một cách linh hoạt hơn.
 
-<i> Giả sử bạn muốn mua một chiếc xe ô tô, bạn sẽ phải đến các cửa hàng để xem xét các xe trước khi mua. Các cửa hàng sẽ đưa xe ra cho bạn xem. </i>
+`
+Giả sử có khá nhiều chiếc xe và client muốn xem một chiếc xe bất kì, chúng ta sẽ không thể đoán trước được cụ thể client muốn xem xe gì, mà chỉ biết toàn bộ các option có thể được lựa chọn `
 
 ```
 public interface Car {
-
     void view();
 }
 ```
 
 ```
 public class Honda implements Car {
-
     @Override
     public void view() {
         System.out.printf("Honda view");
@@ -21,7 +20,6 @@ public class Honda implements Car {
 
 ```
 public class Nexus implements Car {
-
     @Override
     public void view() {
         System.out.printf("Nexus view");
@@ -31,7 +29,6 @@ public class Nexus implements Car {
 
 ```
 public class Toyota implements Car {
-
     @Override
     public void view() {
         System.out.printf("Toyota view");
@@ -41,7 +38,6 @@ public class Toyota implements Car {
 
 ```
 public class Boss {
-
     public void viewHonda() {
         Honda honda = new Honda();
         honda.view();
@@ -59,36 +55,103 @@ public class Boss {
 }
 ```
 
-Việc làm này có vẻ mất thời gian và công sức của bạn đến từng cửa hàng để xem. Tuy nhiên có một cách khác đơn giản hơn, đó là đến một đại lý ô tô có bán nhiều hãng để xem xét hết tất cả các xe. Dễ dàng và nhanh chóng hơn phải không?
+`Đoạn code này if else nhiều lần khiến code không được client và giả sử sau này mở rộng thêm, muốn thêm 1 chiếc xe nữa thì tất cả những đoạn code if else đấy sẽ phải sửa lại thêm 1 điều kiện của chiếc xe vừa thêm`
+
+`Về ưu điểm:
+Nếu dùng Factory Pattern thì sẽ chỉ cần tạo thêm 1 class implements Car, và thêm vào Enum là được`
 
 ```
+enum CarType {
+  HONDA,
+  NEXUS,
+  TOYOTA,
+}
+
 public class CarFactory {
-
-    public void viewCar(String carType) {
-        Car car;
-        if (carType.equalsIgnoreCase("HONDA")) {
-            car = new Honda();
-            car.view();
-        } else if (carType.equalsIgnoreCase("NEXUS")) {
-            car = new Nexus();
-            car.view();
-        } else if (carType.equalsIgnoreCase("TOYOTA")) {
-            car = new Toyota();
-            car.view();
-        }
+  static buildCar(type: CarType) {
+    switch (type) {
+      case CarType.HONDA:
+        return new HondoCar();
+      case CarType.NEXUS:
+        return new NexusCar();
+      case CarType.TOYOTA:
+        return new ToyotaCar();
+      default:
+        throw new Error("Invalid car type");
     }
+  }
 }
+
 ```
 
 ```
-public class Boss {
+const main = () => {
+  const hondaCar = CarFactory.buildCar(CarType.HONDA);
+  hondaCar.view();
 
-    public void viewCar() {
-        CarFactory carFactory = new CarFactory();
-        carFactory.viewCar("HONDA");
-        carFactory.viewCar("NEXUS");
-        carFactory.viewCar("TOYOTA");
-    }
+  const nexusCar = CarFactory.buildCar(CarType.NEXUS);
+  nexusCar.view();
 
+  const toyotaCar = CarFactory.buildCar(CarType.TOYOTA);
+  toyotaCar.view();
+};
+```
+
+`Về nhược điểm: Vỡi những người chưa có kiến thức về pattern thì có thể cảm thấy khó hiểu. Hoặc nếu như chỉ cần class Factory bị sai thì những nơi khác sử dụng Factory này cũng sẽ bị sai theo`
+
+```typescript
+interface ICar {
+  view(): void;
 }
+
+class HondoCar implements ICar {
+  view() {
+    console.log("This is a Honda car");
+  }
+}
+
+class NexusCar implements ICar {
+  view() {
+    console.log("This is a Nexus car");
+  }
+}
+
+class ToyotaCar implements ICar {
+  view() {
+    console.log("This is a Toyota car");
+  }
+}
+
+enum CarType {
+  HONDA,
+  NEXUS,
+  TOYOTA,
+}
+
+class CarFactory {
+  static buildCar(type: CarType) {
+    switch (type) {
+      case CarType.HONDA:
+        return new HondoCar();
+      case CarType.NEXUS:
+        return new NexusCar();
+      case CarType.TOYOTA:
+        return new ToyotaCar();
+      default:
+        throw new Error("Invalid car type");
+    }
+  }
+}
+
+const main = () => {
+  const hondaCar = CarFactory.buildCar(CarType.HONDA);
+  hondaCar.view();
+
+  const nexusCar = CarFactory.buildCar(CarType.NEXUS);
+  nexusCar.view();
+
+  const toyotaCar = CarFactory.buildCar(CarType.TOYOTA);
+  toyotaCar.view();
+};
+main();
 ```

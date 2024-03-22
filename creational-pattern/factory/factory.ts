@@ -1,6 +1,24 @@
-import { HondoCar } from "./HondaCar";
-import { NexusCar } from "./NexusCar";
-import { ToyotaCar } from "./ToyotaCar";
+interface ICar {
+  view(): void;
+}
+
+class HondoCar implements ICar {
+  view() {
+    console.log("This is a Honda car");
+  }
+}
+
+class NexusCar implements ICar {
+  view() {
+    console.log("This is a Nexus car");
+  }
+}
+
+class ToyotaCar implements ICar {
+  view() {
+    console.log("This is a Toyota car");
+  }
+}
 
 enum CarType {
   HONDA,
