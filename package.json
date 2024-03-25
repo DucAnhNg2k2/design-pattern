@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "singleton": "ts-node creational-pattern/singleton/singleton.ts",
     "factory": "ts-node creational-pattern/factory/factory.ts",
-    "adapter": "ts-node structural-pattern/adapter/adapter.ts"
+    "adapter": "ts-node structural-pattern/adapter/adapter.ts",
+    "observer": "ts-node behavioral-pattern/observer/observer.ts"
   },
   "author": "",
   "license": "ISC",
