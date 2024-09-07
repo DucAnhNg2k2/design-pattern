@@ -8,7 +8,8 @@
     "singleton": "ts-node creational-pattern/singleton/singleton.ts",
     "factory": "ts-node creational-pattern/factory/factory.ts",
     "adapter": "ts-node structural-pattern/adapter/adapter.ts",
-    "observer": "ts-node behavioral-pattern/observer/observer.ts"
+    "observer": "ts-node behavioral-pattern/observer/observer.ts",
+    "strategy": "ts-node behavioral-pattern/strategy/strategy.ts"
   },
   "author": "",
   "license": "ISC",
