@@ -9,7 +9,8 @@
     "factory": "ts-node creational-pattern/factory/factory.ts",
     "adapter": "ts-node structural-pattern/adapter/adapter.ts",
     "observer": "ts-node behavioral-pattern/observer/observer.ts",
-    "strategy": "ts-node behavioral-pattern/strategy/strategy.ts"
+    "strategy": "ts-node behavioral-pattern/strategy/strategy.ts",
+    "command": "ts-node behavioral-pattern/command/command.ts"
   },
   "author": "",
   "license": "ISC",
