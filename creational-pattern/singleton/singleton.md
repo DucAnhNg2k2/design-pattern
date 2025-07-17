@@ -1,4 +1,6 @@
-#### Singleton là gì: Là 1 design pattern phổ biến được sử dụng khi chỉ muốn tạo 1 instance duy nhất đối với 1 class.
+#### Singleton là gì: Là 1 design pattern phổ biến được sử dụng khi:
+- Chỉ muốn tạo 1 instance duy nhất đối với 1 class.
+- Việc quản lý việc truy cập tốt hơn vì chỉ có một thể hiện duy nhất.
 
 #### Các ví dụ nên sử dụng Singleton:
 - Logging: Mỗi lần ghi log lại phải tạo hi sinh bộ nhớ ram khởi tạo đối tượng mới để ghi
