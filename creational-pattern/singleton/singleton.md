@@ -1,22 +1,22 @@
-#### Singleton là gì: Là 1 design pattern phổ biến được sử dụng khi:
+### Singleton là gì: Là 1 design pattern phổ biến được sử dụng khi:
 
 - Chỉ muốn tạo 1 instance duy nhất đối với 1 class.
 - Cung cấp một điểm truy cập toàn cục (global access point) đến thực thể đó.
 
-#### Khi nào nên sử dụng Singleton Pattern?
+### Khi nào nên sử dụng Singleton Pattern?
 
 - Quản lý tài nguyên dùng chung: Chẳng hạn như kết nối cơ sở dữ liệu (Database Connection Pool), 1 phiên kết nối socket duy nhất(với FrontEnd)
 - Đối tượng cấu hình (Configuration): Cung cấp một điểm truy cập duy nhất đến các thông số cấu hình của ứng dụng.
 - Logging: Ghi log từ nhiều nơi khác nhau trong ứng dụng vào cùng một file hoặc dịch vụ.
 - Caching: Tạo một bộ nhớ đệm (cache) dùng chung cho toàn bộ hệ thống.
 
-#### Khi nào nên sử dụng
+### Khi nào nên sử dụng
 
 - Khi muốn sử dụng một đối tượng duy nhất cho toàn bộ dự án
 - Khi muốn sử dụng một bộ nhớ duy nhất giúp quản lý dễ dàng hơn
 - Khi muốn tránh khởi tạo nhiều lần(có thể do việc khởi tạo này tốn nhiều bộ nhớ, hoặc tốn nhiều thời gian)
 
-#### Các ví dụ nên sử dụng Singleton:
+### Các ví dụ nên sử dụng Singleton:
 
 `ConnectionPool Manager`
 

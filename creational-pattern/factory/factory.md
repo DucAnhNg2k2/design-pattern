@@ -1,7 +1,10 @@
-#### Factory Pattern là gì: Factory Pattern là một design pattern giúp quản lý và trả về các đối tượng theo yêu cầu, giúp cho việc khởi tạo đổi tượng một cách linh hoạt hơn.
+```
+Khi chúng ta muốn tạo ra một object của một type nào đấy, nhưng chúng ta không biết rõ mình sẽ phải tạo ra cái gì, mà nó phải dựa vào một số điều kiện business logic đầu vào để tạo ra object tương ứng, thì chúng ta có thể sử dụng Factory Method.
+```
 
-`
-Giả sử có khá nhiều chiếc xe và client muốn xem một chiếc xe bất kì, chúng ta sẽ không thể đoán trước được cụ thể client muốn xem xe gì, mà chỉ biết toàn bộ các option có thể được lựa chọn `
+### Factory Pattern là gì: Factory Pattern là một design pattern giúp quản lý và trả về các đối tượng theo yêu cầu, giúp cho việc khởi tạo đổi tượng một cách linh hoạt hơn.
+
+`Giả sử có khá nhiều chiếc xe và client muốn xem một chiếc xe bất kì, chúng ta sẽ không thể đoán trước được cụ thể client muốn xem xe gì, mà chỉ biết toàn bộ các option có thể được lựa chọn`
 
 ```
 public interface Car {
