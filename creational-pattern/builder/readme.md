@@ -1,3 +1,9 @@
+### Builder Pattern:
+
+- Builder Pattern là 1 mẫu thiết kế cho phép bạn xây dựng các đối tượng phức tạp từng bước một, tách rời quá trình xây dựng khỏi việc biểu diễn đối tượng cuối cùng. Điều này có nghĩa là cùng 1 quá trình xây dựng có thể tạo ra các biểu diễn khác nhau của đối tượng
+- Nó thường được sử dụng khi 1 đối tượng có nhiều thuộc tính và việc tạo ra nó bằng
+  1 constructor duy nhất gây khó khăn
+
 ### Được sử dụng khi class có quá nhiều thuộc tính, hàm khởi tạo phải truyền nhiều đối số
 
 - đôi lúc sẽ nhầm lẫn không biết phải truyền thuộc tính nào vào trước thuộc tính nào vì có nhiều đối số được truyền vào constructor đấy
