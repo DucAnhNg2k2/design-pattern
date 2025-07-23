@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    
     "singleton": "ts-node creational-pattern/singleton/singleton.ts",
     "factory": "ts-node creational-pattern/factory/factory.ts",
+    "builder": "ts-node creational-pattern/builder/builder.ts",
+
     "adapter": "ts-node structural-pattern/adapter/adapter.ts",
     "observer": "ts-node behavioral-pattern/observer/observer.ts",
     "strategy": "ts-node behavioral-pattern/strategy/strategy.ts",
